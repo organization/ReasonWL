@@ -20,7 +20,7 @@ public class Main extends PluginBase {
 	
 	@Override
 	public void onDisable() {
-		db.save(true);
+		db.save();
 	}
 	
 	@Override
