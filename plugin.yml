@@ -1,0 +1,19 @@
+name: ReasonWL
+main: reasonwl.Main
+author: maru
+api: ["1.0.0"]
+version: "1.0.0"
+
+commands:
+ wlreason:
+  description: Reason for whitelist
+  usage: /wlreason <reason>
+  permission: reasonwl.commands.wlreason
+
+permissions:
+ reasonwl.*:
+  children:
+   reasonwl.commands.*:
+    children:
+     reasonwl.commands.wlreason:
+      default: OP
