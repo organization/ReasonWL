@@ -24,7 +24,7 @@ public class EventListener implements Listener {
 			return false;
 		}
 		String reason = String.join(" ", args);
-		db.getDB("config").set("reason", reason.replaceAll("\\n", "\n"));
+		db.getDB("config").set("reason", reason);
 		db.message(sender, "Set <" + reason + "> whitelist message.");
 		return true;
 	}
@@ -36,6 +36,6 @@ public class EventListener implements Listener {
 	
 	@EventHandler
 	public void onWhitelistKick(PlayerWhitelistKickEvent event) {
-		event.setWhitelistMessage(db.getDB("config").getString("reason"));
+		event.setWhitelistMessage(db.getDB("config").getString("reason").replace("\\n", "\n"));
 	}
 }
