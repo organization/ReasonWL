@@ -36,6 +36,6 @@ public class EventListener implements Listener {
 	
 	@EventHandler
 	public void onWhitelistKick(PlayerWhitelistKickEvent event) {
-		event.setWhitelistMessage(db.getDB("config").getString("reason").replace("\\n", "\n"));
+		event.setWhitelistMessage(db.getDB("config").getString("reason").replace("<br>", "\n"));
 	}
 }
